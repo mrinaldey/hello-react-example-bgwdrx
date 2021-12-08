@@ -17,3 +17,10 @@ class Confess extends React.Component {
 }
 const dum = <Confess />;
 ReactDOM.render(dum, document.getElementById('chapri'));
+
+function Hello(props) {
+  return <p>Hello, {props.name}!</p>;
+}
+
+const el = <Hello name="HOOMAN" />;
+ReactDOM.render(el, document.getElementById('ello'));
