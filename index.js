@@ -2,4 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
 
-ReactDOM.render(<h1>I lobh you Riaan</h1>, document.getElementById('root'));
+const name = 'Riaan';
+const el = <p>I lobh you, {name}</p>;
+const em = <h1>yesh, {el}</h1>;
+ReactDOM.render(em, document.getElementById('root'));
