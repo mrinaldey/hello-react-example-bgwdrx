@@ -10,8 +10,10 @@ let show = () => {
 };
 setInterval(show, 500);
 
-function Confess() {
-  return <h1>I love you.</h1>;
+class Confess extends React.Component {
+  render() {
+    return <h1> I love you babie </h1>;
+  }
 }
 const dum = <Confess />;
 ReactDOM.render(dum, document.getElementById('chapri'));
