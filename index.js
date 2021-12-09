@@ -13,8 +13,14 @@ function Item(props) {
     </div>
   );
 }
-const el = <Item name="Cheese" price="4.99" /> 
-ReactDOM.render(
-  el,
-  document.getElementById('chapri')
-)
+function App() {
+  return (
+    <div>
+      <Item name="Cheese" price="4.99" />
+      <Item name="Bread" price="1.99" />
+      <Item name="Ice Cream" price="24" />
+    </div>
+  );
+}
+const el = <App />;
+ReactDOM.render(el, document.getElementById('chapri'));
