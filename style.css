@@ -3,8 +3,14 @@ p {
   font-family: Lato;
 }
 .item {
-  background-color: red;
+  background-color: rosybrown;
   margin: 15px;
-  padding: 5px;
+  padding: 10px;
   border-radius: 8px;
+}
+#btn {
+  border-radius: 8px;
+  background-color: maroon;
+  padding: 10px;
+  align-items: center;
 }
