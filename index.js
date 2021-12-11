@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
 
@@ -25,28 +25,28 @@ import './style.css';
 // const el = <App />;
 // ReactDOM.render(el, document.getElementById('root'));
 
-class Hello extends React.Component {
-  state = {
-    count: 2,
-  };
-  lovemore = () => {
-    this.setState({
-      count: this.state.count * 2,
-    });
-  };
-  render() {
-    return (
-      <div>
-        <h1> Your love for me: {this.state.count}</h1>
-        <button id="btn" onClick={this.lovemore}>
-          LOVE MORE
-        </button>
-      </div>
-    );
-  }
-}
-const em = <Hello />;
-ReactDOM.render(em, document.getElementById('chapri'));
+// class Hello extends React.Component {
+//   state = {
+//     count: 2,
+//   };
+//   lovemore = () => {
+//     this.setState({
+//       count: this.state.count * 2,
+//     });
+//   };
+//   render() {
+//     return (
+//       <div>
+//         <h1> Your love for me: {this.state.count}</h1>
+//         <button id="btn" onClick={this.lovemore}>
+//           LOVE MORE
+//         </button>
+//       </div>
+//     );
+//   }
+// }
+// const em = <Hello />;
+// ReactDOM.render(em, document.getElementById('chapri'));
 
 // class Counter extends React.Component {
 //   state = {
@@ -68,3 +68,22 @@ ReactDOM.render(em, document.getElementById('chapri'));
 // }
 // const en = <Counter />;
 // ReactDOM.render(en, document.getElementById('ello'));
+
+function Counter() {
+  const [counter, setCounter] = useState(2);
+
+  function increment() {
+    setCounter(counter + 1);
+  }
+  return (
+    <div>
+      <h2>Love me:{counter}</h2>
+      <br />
+      <button id="btn" onClick={increment}>
+        LOVE
+      </button>
+    </div>
+  );
+}
+const co = <Counter />;
+ReactDOM.render(co, document.getElementById('root'));
