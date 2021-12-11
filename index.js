@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
 
@@ -57,6 +57,9 @@ import './style.css';
 //       counter: this.state.counter + 1,
 //     });
 //   };
+//   componentDidMount() {
+//     setInterval(this.increment, 1000);
+//   }
 //   render() {
 //     return (
 //       <div>
@@ -72,9 +75,14 @@ import './style.css';
 function Counter() {
   const [counter, setCounter] = useState(2);
 
+  useEffect(() => {
+    alert('Number of clicks: ' + counter);
+  });
+
   function increment() {
     setCounter(counter + 1);
   }
+
   return (
     <div>
       <h2>Love me:{counter}</h2>
