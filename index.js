@@ -96,25 +96,48 @@ import './style.css';
 // const co = <Counter />;
 // ReactDOM.render(co, document.getElementById('root'));
 
-function Converter() {
-  const [km, setKm] = useState(0);
-  const mile = convert(km) == 1 ? 'mile' : 'miles';
+// function Converter() {
+//   const [km, setKm] = useState(0);
+//   const mile = convert(km) == 1 ? 'mile' : 'miles';
+
+//   function handleChange(e) {
+//     setKm(e.target.value);
+//   }
+//   function convert(km) {
+//     return (km / 1.609).toFixed(2);
+//   }
+
+//   return (
+//     <div>
+//       <input id="btn" type="text" value={km} onChange={handleChange} />
+//       <p>
+//         {km} km is {convert(km)} {mile}.
+//       </p>
+//     </div>
+//   );
+// }
+// const ez = <Converter />;
+// ReactDOM.render(ez, document.getElementById('ello'));
+
+function AddForm() {
+  const [sum, setSum] = useState(0);
+  const [num, setNum] = useState(0);
 
   function handleChange(e) {
-    setKm(e.target.value);
+    setNum(e.target.value);
   }
-  function convert(km) {
-    return (km / 1.609).toFixed(2);
+  function handleSubmit(e) {
+    setSum(sum + Number(num));
+    e.preventDefault();
   }
 
   return (
-    <div>
-      <input type="text" value={km} onChange={handleChange} />
-      <p>
-        {km} km is {convert(km)} {mile}.
-      </p>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input type="number" value={num} onChange={handleChange} />
+      <input type="submit" value="Add" />
+      <p> S-Sum is {sum} </p>
+    </form>
   );
 }
-const ez = <Converter />;
-ReactDOM.render(ez, document.getElementById('ello'));
+const eff = <AddForm />;
+ReactDOM.render(eff, document.getElementById('chapri'));
