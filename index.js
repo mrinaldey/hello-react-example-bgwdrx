@@ -72,26 +72,49 @@ import './style.css';
 // const en = <Counter />;
 // ReactDOM.render(en, document.getElementById('ello'));
 
-function Counter() {
-  const [counter, setCounter] = useState(2);
+// function Counter() {
+//   const [counter, setCounter] = useState(2);
 
-  useEffect(() => {
-    alert('Number of clicks: ' + counter);
-  });
+//   useEffect(() => {
+//     alert('Number of clicks: ' + counter);
+//   });
 
-  function increment() {
-    setCounter(counter + 1);
+//   function increment() {
+//     setCounter(counter + 1);
+//   }
+
+//   return (
+//     <div>
+//       <h2>Love me:{counter}</h2>
+//       <br />
+//       <button id="btn" onClick={increment}>
+//         LOVE
+//       </button>
+//     </div>
+//   );
+// }
+// const co = <Counter />;
+// ReactDOM.render(co, document.getElementById('root'));
+
+function Converter() {
+  const [km, setKm] = useState(0);
+  const mile = convert(km) == 1 ? 'mile' : 'miles';
+
+  function handleChange(e) {
+    setKm(e.target.value);
+  }
+  function convert(km) {
+    return (km / 1.609).toFixed(2);
   }
 
   return (
     <div>
-      <h2>Love me:{counter}</h2>
-      <br />
-      <button id="btn" onClick={increment}>
-        LOVE
-      </button>
+      <input type="text" value={km} onChange={handleChange} />
+      <p>
+        {km} km is {convert(km)} {mile}.
+      </p>
     </div>
   );
 }
-const co = <Counter />;
-ReactDOM.render(co, document.getElementById('root'));
+const ez = <Converter />;
+ReactDOM.render(ez, document.getElementById('ello'));
