@@ -119,25 +119,35 @@ import './style.css';
 // const ez = <Converter />;
 // ReactDOM.render(ez, document.getElementById('ello'));
 
-function AddForm() {
-  const [sum, setSum] = useState(0);
-  const [num, setNum] = useState(0);
+// function AddForm() {
+//   const [sum, setSum] = useState(0);
+//   const [num, setNum] = useState(0);
 
-  function handleChange(e) {
-    setNum(e.target.value);
-  }
-  function handleSubmit(e) {
-    setSum(sum + Number(num));
-    e.preventDefault();
-  }
+//   function handleChange(e) {
+//     setNum(e.target.value);
+//   }
+//   function handleSubmit(e) {
+//     setSum(sum + Number(num));
+//     e.preventDefault();
+//   }
 
-  return (
-    <form onSubmit={handleSubmit}>
-      <input type="number" value={num} onChange={handleChange} />
-      <input type="submit" value="Add" />
-      <p> S-Sum is {sum} </p>
-    </form>
-  );
+//   return (
+//     <form onSubmit={handleSubmit}>
+//       <input type="number" value={num} onChange={handleChange} />
+//       <input type="submit" value="Add" />
+//       <p> S-Sum is {sum} </p>
+//     </form>
+//   );
+// }
+// const eff = <AddForm />;
+// ReactDOM.render(eff, document.getElementById('chapri'));
+
+const arr = ['A', 'B', 'C'];
+
+function MyList(props) {
+  const arr = props.data;
+  const listItems = arr.map((val, index) => <li key={index}>{val}</li>);
+  return <ul>{listItems}</ul>;
 }
-const eff = <AddForm />;
-ReactDOM.render(eff, document.getElementById('chapri'));
+const err = <MyList data={arr} />;
+ReactDOM.render(err, document.getElementById('root'));
